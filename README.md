@@ -63,21 +63,32 @@ You can log in using the following DummyJSON test user:
 ## 🗁 Folder Structure
 
 ```
-src/
- ├── api/
- │    └── http.js           # Axios instance with interceptors
- ├── stores/
- │    └── auth.js           # Pinia authentication store
- ├── pages/
- │    ├── LoginPage.vue     # Login form
- │    ├── DashboardPage.vue # Protected page after login
- │    └── HomePage.vue
- ├── router/
- │    └── index.js          # Vue Router setup
- ├── components/
- │    └── AppNavbar.vue
- ├── App.vue
- └── main.js
+ics2609-lab5-vue-login/
+├── .vscode/
+├── node_modules/
+├── public/
+├── src/
+│   ├── api/
+│   │   └── http.js              # Axios instance with interceptors
+│   ├── assets/                  # Static assets (images, icons, etc.)
+│   ├── components/              # Reusable components
+│   ├── pages/
+│   │   ├── DashboardPage.vue    # Protected page after login
+│   │   ├── HomePage.vue         # Public home page
+│   │   └── LoginPage.vue        # Login form
+│   ├── router/
+│   │   └── index.js             # Vue Router setup and guards
+│   ├── stores/
+│   │   └── auth.js              # Pinia authentication store
+│   ├── App.vue                  # Root Vue component
+│   ├── main.js                  # Application entry point
+│   └── style.css                # Custom global styles
+├── .gitignore
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+└── vite.config.js
 ```
 
 ---
@@ -87,3 +98,4 @@ src/
 * API Base URL: `https://dummyjson.com`
 * When login fails, an error message (“Invalid credentials”) will appear below the form.
 * Logging out clears the stored token and user data from Pinia.
+* You can verify successful login using **DevTools → Network → /auth/login** and check for the **Authorization header** when calling `/auth/me`.
