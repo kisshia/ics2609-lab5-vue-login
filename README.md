@@ -1,5 +1,89 @@
-# Vue 3 + Vite
+# ICS2609 Lab 5 – Vue 3 + Pinia + Bootstrap: Progressive Login with Public API (DummyJSON), Token (localStorage), and Router Guards
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A simple Vue 3 login application that demonstrates authentication using the [DummyJSON](https://dummyjson.com) API.
+The app allows users to log in with demo credentials and redirects them to a dashboard upon successful login.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+---
+
+## 🚀 Features
+
+* Vue 3 + Vite project structure
+* Login form with validation and loading state
+* Authentication handled via Axios interceptors
+* Token stored in Pinia store (`useAuthStore`)
+* Route protection (redirects unauthenticated users)
+
+---
+
+## 🧩 Tech Stack
+
+* [Vue 3](https://vuejs.org/)
+* [Pinia](https://pinia.vuejs.org/)
+* [Vue Router](https://router.vuejs.org/)
+* [Axios](https://axios-http.com/)
+* [Bootstrap 5](https://getbootstrap.com/)
+
+---
+
+## 🧰 Project Setup
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/kisshia/ics2609-lab5-vue-login.git
+cd ics2609-lab5-vue-login
+```
+
+### 2️⃣ Install dependencies
+
+```bash
+npm install
+```
+
+### 3️⃣ Run the development server
+
+```bash
+npm run dev
+```
+
+Then open the link shown in your terminal (usually `http://localhost:5173/`).
+
+---
+
+## 🔐 Sample Credentials
+
+You can log in using the following DummyJSON test user:
+
+| Username | Password     |
+| -------- | ------------ |
+| `emilys` | `emilyspass` |
+
+---
+
+## 🗁 Folder Structure
+
+```
+src/
+ ├── api/
+ │    └── http.js           # Axios instance with interceptors
+ ├── stores/
+ │    └── auth.js           # Pinia authentication store
+ ├── pages/
+ │    ├── LoginPage.vue     # Login form
+ │    ├── DashboardPage.vue # Protected page after login
+ │    └── HomePage.vue
+ ├── router/
+ │    └── index.js          # Vue Router setup
+ ├── components/
+ │    └── AppNavbar.vue
+ ├── App.vue
+ └── main.js
+```
+
+---
+
+## 🧠 Notes
+
+* API Base URL: `https://dummyjson.com`
+* When login fails, an error message (“Invalid credentials”) will appear below the form.
+* Logging out clears the stored token and user data from Pinia.
